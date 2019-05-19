@@ -20,8 +20,11 @@ function almostIncreasingSequence(sequence) {
       found = true;
 
       if (i === 1 || i + 1 === sequence.length) {
+        // Change eslint for this
+        // eslint-disable-next-line no-continue
         continue;
       } else if (sequence[i] > sequence[i - 2]) {
+        // eslint-disable-next-line no-param-reassign
         sequence[i - 1] = sequence[i - 2];
       } else if (sequence[i - 1] >= sequence[i + 1]) {
         return false;
