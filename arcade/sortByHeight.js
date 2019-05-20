@@ -7,3 +7,17 @@ in a non-descending order without moving the trees.
 People can be very tall!
 
 */
+
+const sortByHeight = (arr) => {
+  const sort = arr.filter(h => h > 0).sort((a, b) => a - b);
+  return arr.map((p) => {
+    if (p !== -1) {
+      return sort.shift();
+    }
+    return -1;
+  });
+};
+
+
+const arr = [2, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 1];
+console.log(sortByHeight(arr));
