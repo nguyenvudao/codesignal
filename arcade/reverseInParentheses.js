@@ -6,9 +6,20 @@ Input strings will always be well-formed with matching ()s.
 */
 
 const reverseInParentheses = (str) => {
-  for (let i = 0; i < str.length; i++) {
-    if (str[i] === '(') {
-
+  while (true) {
+    const findBracket = str.indexOf(')');
+    if (findBracket === -1) {
+      break;
     }
+    const o = str.substring(0, findBracket).lastIndexOf('(');
+    const start = str.substring(0, o);
+    const middle = str.substring(o + 1, findBracket).split('').reverse().join('');
+    const end = str.substring(findBracket + 1, str.length);
+
+    str = start + middle + end;
   }
+  return str;
 };
+
+const str = 'foo(bar(baz))blim';
+console.log(reverseInParentheses(str));

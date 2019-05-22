@@ -19,5 +19,11 @@ const sortByHeight = (arr) => {
 };
 
 
+function sortByHeight1(ar) {
+  const filtered = ar.filter(val => val !== -1);
+  const sorted = filtered.sort((a, b) => a - b);
+  return ar.map(val => (val === -1 ? -1 : sorted.shift()));
+}
+
 const arr = [2, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 1];
-console.log(sortByHeight(arr));
+console.log(sortByHeight1(arr));
