@@ -14,12 +14,24 @@
 //   return secondHighest;
 // };
 
-
 // const arr = [5, 5, 2, 4, 8, 7, 6, 8];
 // // console.log(Math.max(...arr));
 // console.log(findSecondLargest(arr));
 
-const str1 = 'ab';
-const str2 = 'abcaabbefab';
 
-console.log(str2.replace(str1, ''));
+function maxMoves(s, t) {
+  // Write your code here
+  let count = 0;
+  while (true) {
+    if (!s.includes(t)) break;
+    count++;
+    console.log(count);
+  }
+  return count;
+}
+
+const b = 'a';
+const a = 'a';
+// const c = b.substring(a.indexOf(a));
+// console.log(c);
+console.log(maxMoves(a, b));

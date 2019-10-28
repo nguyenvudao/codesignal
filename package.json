@@ -19,5 +19,8 @@
     "env": {
       "es6": true
     }
+  },
+  "dependencies": {
+    "qrcode": "^1.3.3"
   }
 }
